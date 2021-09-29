@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/axtck/compose/issues"
   },
-  "homepage": "https://github.com/axtck/compose#readme"
+  "homepage": "https://github.com/axtck/compose#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
 }
