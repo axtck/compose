@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  mysql-main:
+    image: mysql:8
+    container_name: "mysql-main"
+    restart: always
+    env_file:
+      - ../env/docker.env
+    ports:
+      - "33007:3306"
+    volumes:
+      - ../volumes/mysql-main:/var/lib/mysql
