@@ -1,9 +1,10 @@
 const penv = {
     port: process.env.PORT,
-    mysqlUser: process.env.MYSQL_USER,
-    mysqlPw: process.env.MYSQL_PASSWORD,
+    mysqlHost: process.env.MYSQL_HOST,
+    mysqlPort: process.env.MYSQL_PORT,
     mysqlDb: process.env.MYSQL_DATABASE,
-    mysqlHost: process.env.MYSQL_HOST
+    mysqlUser: process.env.MYSQL_USER,
+    mysqlPw: process.env.MYSQL_PASSWORD
 };
 
 module.exports = penv;
