@@ -24,7 +24,5 @@ services:
       - ./docker/env/docker.server-main.env
     ports:
       - "3001:3001"
-    environment:
-      
     stdin_open: true
     tty: true
