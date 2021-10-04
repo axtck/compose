@@ -2,4 +2,5 @@ node_modules/
 .env
 
 docker/volumes/
-docker/env/docker.env
+docker/env/docker.mysql-main.env
+docker/env/docker.server-main.env
