@@ -1,5 +1,4 @@
 const connect = (mysql, penv) => {
-    console.log("qsdfqsdf", JSON.stringify(penv));
     mysql.createConnection({
         host: penv.mysqlHost,
         port: penv.mysqlPort,
