@@ -12,19 +12,22 @@ services:
       - "${HOST_MYSQL_PORT}:3306" # map .env port to 3306
     volumes:
       - ./docker/volumes/mysql-main:/var/lib/mysql
-  # server-main:
-  #   depends_on:
-  #     - mysql-main
-  #   container_name: "server-main"
-  #   build:
-  #     context: . # think something goes wrong here
-  #     dockerfile: Dockerfile
-  #   restart: unless-stopped
-  #   env_file: 
-  #     - ./docker/env/docker.env
-  #   environment:
-  #     - PORT=3001
-  #   ports:
-  #     - "3001:3001"
-  #   stdin_open: true
-  #   tty: true
+  server-main:
+    depends_on:
+      - mysql-main
+    links: 
+      - mysql-main:db # fix networking !!!
+    container_name: "server-main"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file: 
+      - ./docker/env/docker.server-main.env
+    ports:
+      - ${HOST_SERVER_PORT}:${DOCKER_SERVER_PORT}
+    environment:
+      - PORT=${DOCKER_SERVER_PORT}
+      - MYSQL_HOST=db # ???
+    stdin_open: true
+    tty: true
